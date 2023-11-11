@@ -10,7 +10,7 @@ const DeleteEmp = () => {
 
   const deleteBook = () => {
     axios
-      .delete(`http://localhost:3001/emp/delete/${id}`)
+      .delete(`https://employee-supervisor.vercel.app/emp/delete/${id}`)
       .then(() => {
         enqueueSnackbar("Employee Deleted successfully", {
           variant: "success",

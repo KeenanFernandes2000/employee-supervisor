@@ -14,7 +14,7 @@ const UpdateEmp = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/emp/find/${id}`)
+      .get(`https://employee-supervisor.vercel.app/emp/find/${id}`)
       .then((response) => {
         setName(response.data.name);
         setTitle(response.data.title);
@@ -35,7 +35,7 @@ const UpdateEmp = () => {
     };
 
     axios
-      .put(`http://localhost:3001/emp/update/${id}`, data)
+      .put(`https://employee-supervisor.vercel.app/emp/update/${id}`, data)
       .then(() => {
         enqueueSnackbar("Employee updated successfully", {
           variant: "success",

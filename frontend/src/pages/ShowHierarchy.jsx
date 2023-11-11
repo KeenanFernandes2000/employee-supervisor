@@ -6,7 +6,7 @@ const ShowHierarchy = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/emp/viewchain")
+      .get("https://employee-supervisor.vercel.app/emp/viewchain")
       .then((response) => {
         setData(response.data);
       })
