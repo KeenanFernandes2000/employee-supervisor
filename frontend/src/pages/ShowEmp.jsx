@@ -9,7 +9,7 @@ const ShowEmp = () => {
 
   useEffect(() => {
     axios
-      .get(`https://employee-supervisor.vercel.app/emp/find/${id}`)
+      .get(`http://localhost:3001/emp/find/${id}`)
       .then((response) => {
         setEmp(response.data);
       })

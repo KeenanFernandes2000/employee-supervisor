@@ -16,7 +16,7 @@ const CreateEmp = () => {
     };
 
     axios
-      .post("https://employee-supervisor.vercel.app/emp/create", data)
+      .post("http://localhost:3001/emp/create", data)
       .then(() => {
         enqueueSnackbar("Emp Created successfully", { variant: "success" });
         navigate("/");

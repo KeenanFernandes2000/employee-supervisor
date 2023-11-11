@@ -11,7 +11,7 @@ const Home = () => {
   const [emps, setEmps] = useState([]);
   useEffect(() => {
     axios
-      .get("https://employee-supervisor.vercel.app/emp")
+      .get("http://localhost:3001/emp")
       .then((response) => {
         setEmps(response.data.data);
       })

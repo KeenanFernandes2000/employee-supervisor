@@ -16,7 +16,7 @@ const UpdateSupEmp = () => {
 
   useEffect(() => {
     axios
-      .get(`https://employee-supervisor.vercel.app/emp/sup/${id}`)
+      .get(`http://localhost:3001/emp/sup/${id}`)
       .then((response) => {
         if (Array.isArray(response.data)) {
           setSup(response.data);
@@ -29,7 +29,7 @@ const UpdateSupEmp = () => {
       });
 
     axios
-      .get(`https://employee-supervisor.vercel.app/emp/find/${id}`)
+      .get(`http://localhost:3001/emp/find/${id}`)
       .then((response) => {
         setName(response.data.name);
         setTitle(response.data.title);
@@ -50,7 +50,7 @@ const UpdateSupEmp = () => {
     };
 
     axios
-      .put(`https://employee-supervisor.vercel.app/emp/super/${id}`, data)
+      .put(`http://localhost:3001/emp/super/${id}`, data)
       .then(() => {
         console.log("Employee supervisor updated successfully");
         enqueueSnackbar("Employee supervisor updated successfully", {
