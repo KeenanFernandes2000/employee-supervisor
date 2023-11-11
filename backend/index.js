@@ -16,6 +16,13 @@ server.get("/", (req, res) => {
   return res.status(234).send("WELCOME TO THE COMPANY DASHBOARD");
 });
 
+server.get("https://employee-supervisor.vercel.app/api/check", (req, res) => {
+  console.log("App is live");
+  res.json({
+    message: "Hello World",
+  });
+});
+
 mongoose
   .connect(process.env.DB_URL)
   .then(function () {
@@ -25,6 +32,6 @@ mongoose
     console.log("Connection error", connectionError);
   });
 
-server.listen(process.env.PORT, function () {
+server.listen(process.env.PORT || 8000, function () {
   console.log("App is live");
 });
