@@ -9,7 +9,7 @@ dotenv.config();
 const server = express();
 server.use(
   cors({
-    origin: ["https://employee-supervisor-frontend.vercel.app/"],
+    origin: ["https://employee-supervisor-frontend.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
