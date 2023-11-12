@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     const emp = await Emp.find({});
 
     // if the database is empty this will create a defalt admin so that the heirarchy works
-    if (!emp) {
+    if (emp.length == 0) {
       const admin = {
         name: "admin",
         title: "admin",
@@ -116,7 +116,7 @@ router.delete("/delete/:id", async (req, res) => {
     const employeeToDelete = await Emp.findById(id);
 
     if (employeeToDelete.role == "admin") {
-      return res.status(404).send({ message: "Can not delete admin" });
+      return res.status(500).send({ message: "Can not delete admin" });
     }
 
     if (employeeToDelete) {
