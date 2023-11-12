@@ -115,6 +115,10 @@ router.delete("/delete/:id", async (req, res) => {
     const { id } = req.params;
     const employeeToDelete = await Emp.findById(id);
 
+    if (employeeToDelete.role == "admin") {
+      return res.status(404).send({ message: "Can not delete admin" });
+    }
+
     if (employeeToDelete) {
       // Clear the supervisory relationship for all employees supervised by the deleted employee
       await Emp.updateMany(

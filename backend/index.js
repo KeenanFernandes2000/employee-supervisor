@@ -8,11 +8,6 @@ dotenv.config();
 
 const server = express();
 server.use(cors());
-// {
-//     origin: ["https://employee-supervisor-frontend-git-master-codingbaristas-projects.vercel.app"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,
-//   }
 server.use(express.json());
 server.use("/emp", empRoutes);
 
