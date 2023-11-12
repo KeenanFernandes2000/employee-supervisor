@@ -18,7 +18,9 @@ const CreateEmp = () => {
     axios
       .post("http://localhost:3001/emp/create", data)
       .then(() => {
-        enqueueSnackbar("Emp Created successfully", { variant: "success" });
+        enqueueSnackbar("Employee Created successfully", {
+          variant: "success",
+        });
         navigate("/");
       })
       .catch((error) => {
